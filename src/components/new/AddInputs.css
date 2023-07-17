@@ -1,0 +1,125 @@
+#addFields {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  margin: 2rem;
+  color: rgb(86, 86, 92);
+  background-color: rgb(229, 236, 236);
+  height: auto;
+  width: 75vw;
+  display: flex;
+    justify-content: space-evenly;
+  align-items: center;
+}
+
+.addInputFields {
+  margin: 1rem;
+  font-size: 20px;
+  height: auto;
+  width: 50vw;
+  /* background-color: blueviolet; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputFieldHeading{
+  font-size: 24px;
+}
+
+#inputType {
+  margin-left: 1vw;
+  padding: 6px;
+  font-size: 1vw;
+}
+
+.labelHeading{
+  font-size: 24px;
+}
+
+.label{
+  margin-left: 1vw;
+  height: 1rem;
+  width: 10vw;
+  font-size: 16px;
+  }
+
+.addBtn {
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: none;
+  height: 4vh;
+  width: 6rem;
+  font-size: larger;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  background-color: rgb(47, 94, 57);
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .addFields {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  #container {
+    color: rgb(86, 86, 92);
+    background-color: rgb(229, 236, 236);
+    width: 90vw;
+    height: auto;
+    
+  }
+
+  .addInputFields {
+    margin: 10px;
+    font-size: 20px;
+    height: auto;
+    width: 80vw;
+    flex-direction: column;
+    /* background-color: blueviolet; */
+  }
+
+  .inputFieldHeading{
+    font-size: 13px;
+  }
+
+  #inputType {
+    margin-left: 1vw;
+    padding: 2px;
+    font-size: 1vh;
+}
+
+.labelHeading{
+  font-size: 13px;
+}
+
+.label{
+  height: 1vh;
+width: 20vw;
+font-size: 13px;
+}
+
+  .addBtn  {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1vh;
+    margin: 1vw;
+    border: none;
+    height: 2vh;
+    width: 4rem;
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    background-color: rgb(47, 94, 57);
+  }
+}
