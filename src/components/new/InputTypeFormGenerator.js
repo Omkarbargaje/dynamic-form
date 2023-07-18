@@ -11,8 +11,7 @@ export default function InputTypeFormGenerator() {
   const [finalFormData, setFinalFormData] = useState({});
   const [keys, setKeys] = useState(0);
 
-
-console.log("finalFormData: "+ finalFormData);
+  console.log("finalFormData: " + finalFormData);
 
   const handelOnChange = (e) => {
     console.log("handel on change");
@@ -25,7 +24,7 @@ console.log("finalFormData: "+ finalFormData);
   const deleteFinalData = (key) => {
     setFinalFormList((formData) => {
       console.log("delte key: ", key);
-      let newData = {...formData}
+      let newData = { ...formData };
       delete newData[key];
       return newData;
     });
@@ -34,20 +33,22 @@ console.log("finalFormData: "+ finalFormData);
   const addField = (ElementHtml) => {
     setFinalFormList((finalFormList) => ({
       ...finalFormList,
-      [keys]: <ElementHtml
-        handelOnChange={handelOnChange}
-        value={finalFormData}
-        index={keys}
-        deleteFinalData={deleteFinalData}
-      />
-  }));
+      [keys]: (
+        <ElementHtml
+          handelOnChange={handelOnChange}
+          value={finalFormData}
+          index={keys}
+          deleteFinalData={deleteFinalData}
+        />
+      ),
+    }));
     /*here ElementHtml is using as < > because in <inputForm/> we are calling a addField where we are passing a generateComponent in it which is returing a component  */
     setKeys((key) => key + 1);
   };
 
   const componentMap = {
     input: <InputForm addField={addField} />,
-    dropdown: <Dropdown addField={addField}/>,
+    dropdown: <Dropdown addField={addField} />,
     // checkbox: <InputForm/>,
     // radio: <InputForm/>,
     // textArea: <InputForm/>
@@ -73,11 +74,9 @@ console.log("finalFormData: "+ finalFormData);
         <div id="container">
           <div className="addInputFields">
             <div>
-
               <label htmlFor="inputType" className="inputFieldHeading">
                 Choose a input Field:
               </label>
-
               <select
                 name="inputType"
                 id="inputType"
@@ -89,27 +88,36 @@ console.log("finalFormData: "+ finalFormData);
                 <option value="radio">Radio Button</option>
                 <option value="textArea">Text Area</option>
               </select>
-
             </div>
 
+            <div></div>
           </div>
 
           <button className="addBtn" onClick={handleClick}>
             Select
           </button>
-
         </div>
       </div>
-
-      {/* form for mid person */}
-      <div>{showForm ? componentMap[elementType] : ""}</div>{" "}  
+      <div>{showForm ? componentMap[elementType] : ""}</div>{" "}
       {/**elemetType is variable which is supposed to be the key for componentmap so we use [] to resolve the keyname from elementType */}
-    
+     
 
-    {/* form for end user */}
-      <div style={{padding:"20px"}}>{Object.keys(finalFormList).map((key) => finalFormList[key])}</div>
-      
-      <button onClick={()=>{ }}> Submit</button>
+<div className="flex justify-center">
+
+      <div className=" bg-pink-200 my-10 w-full md:w-3/4 rounded-lg shadow-md min-h-min">
+
+        <div className="text-5xl font-semibold text-gray-800 py-10">
+          User Form
+        </div>
+
+        <div>{Object.keys(finalFormList).map((key) => finalFormList[key])}</div>
+
+        <div className="py-5">
+            <button onClick={() => {}}> Submit</button>
+        </div>
+
+      </div>
+</div>
     </>
   );
 }

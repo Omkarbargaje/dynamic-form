@@ -1,3 +1,28 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes click-effect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-click-effect:active {
+  transform: scale(0.9);
+}
+
+.animate-click-effect {
+  animation: click-effect 0.3s ease-in; /* Adjust duration and timing function as needed */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +36,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
