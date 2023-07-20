@@ -68,13 +68,18 @@ export default function Dropdown(props) {
     });
   };
 
-  const generateSelectTag =
-    () =>
+  const generateSelectTag = () =>
+
     ({ handelOnChange, value, index, deleteFinalData }) => {
+
       const deleteElement = () => {
+
         // console.log("key in generateComponent",key)
+
         deleteFinalData(index);
+
       };
+
       console.log("key in generateComponent", index);
 
       return (
@@ -165,13 +170,13 @@ export default function Dropdown(props) {
       <div className="InputForm bg-gray-500 p-8 w-full md:w-3/4 rounded-lg shadow-md min-h-min">
         <div className="flex justify-center flex-col space-y-4">
           <div className="flex justify-center flex-col">
+            
             <div>
               <label
                 htmlFor="label"
                 className="block mb-2 text-lg font-semibold text-white"
-              >
-                Dropdown Name
-              </label>
+              > Dropdown Name </label>
+
               <input
                 type="text"
                 name="label"
@@ -185,9 +190,8 @@ export default function Dropdown(props) {
               <label
                 htmlFor="keyName"
                 className="block mb-2 text-lg font-semibold text-white"
-              >
-                Key Name
-              </label>
+              > Key Name </label>
+
               <input
                 type="text"
                 name="keyName"
@@ -198,34 +202,29 @@ export default function Dropdown(props) {
             </div>
 
             <div className="my-5">
+
               <button
                 onClick={addOptions}
                 style={{ marginLeft: "25%", marginRight: "25%" }}
                 className=" bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform transition-transform duration-100 btn-click-effect w-40"
-              >
-                Add Options
-              </button>
+              > Add Options </button>
+
             </div>
+
           </div>
 
-          <div className="space-y-4 bg-gray-200 py-5 rounded-md">
+      <div className="space-y-4 bg-gray-200 py-5 rounded-md">
+
             {Object.keys(optionsList).map((key) => optionsList[key])}
 
-<div >
-
+         <div >
           <button
             onClick={addEntry}
             className="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform transition-transform duration-100 btn-click-effect"
-          >
-            Create Dropdown
-          </button>
+          > Create Dropdown </button>
+        </div>
 
-</div>
-
-          </div>
-
-
-
+      </div>
         </div>
       </div>
     </div>

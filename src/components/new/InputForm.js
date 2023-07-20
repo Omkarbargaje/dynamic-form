@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 const defaultProps = {
@@ -7,16 +8,16 @@ const defaultProps = {
 };
 
 export default function InputForm(props) {
+  
   const [inputProp, setInputProp] = useState(defaultProps);
 
   const handleChange = (e) => {
     setInputProp({ ...inputProp, [e.target.name]: e.target.value });
   };
 
-  const generateComponent =
-    () =>
-    ({ handelOnChange, value, index, deleteFinalData }) => {
-      const deleteElement = () => {
+  const generateComponent =() =>({ handelOnChange, value, index, deleteFinalData }) => {
+      
+    const deleteElement = () => {
         deleteFinalData(index);
       };
 

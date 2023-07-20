@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./AddInputs.css";
 import InputForm from "./InputForm";
 import Dropdown from "./Dropdown";
+import Checkbox from "./Checkbox";
 
 export default function InputTypeFormGenerator() {
   const [elementType, setElementType] = useState("input");
@@ -49,7 +50,7 @@ export default function InputTypeFormGenerator() {
   const componentMap = {
     input: <InputForm addField={addField} />,
     dropdown: <Dropdown addField={addField} />,
-    // checkbox: <InputForm/>,
+    checkbox: <Checkbox addField={addField}/>,
     // radio: <InputForm/>,
     // textArea: <InputForm/>
   };
@@ -93,31 +94,37 @@ export default function InputTypeFormGenerator() {
             <div></div>
           </div>
 
-          <button className="addBtn" onClick={handleClick}>
+          <button
+            className="bg-green-700 hover:bg-green-800 text-white font-semibold px-4 py-1 rounded-2xl shadow-md transform transition-transform duration-100 btn-click-effect"
+            onClick={handleClick}
+          >
             Select
           </button>
         </div>
       </div>
       <div>{showForm ? componentMap[elementType] : ""}</div>{" "}
       {/**elemetType is variable which is supposed to be the key for componentmap so we use [] to resolve the keyname from elementType */}
-     
+      <div className="flex justify-center">
+        <div className=" bg-pink-200 my-10 w-full md:w-3/4 rounded-lg shadow-md min-h-min">
+          <div className="text-5xl font-semibold text-gray-800 py-10">
+            User Form
+          </div>
 
-<div className="flex justify-center">
+          <div>
+            {Object.keys(finalFormList).map((key) => finalFormList[key])}
+          </div>
 
-      <div className=" bg-pink-200 my-10 w-full md:w-3/4 rounded-lg shadow-md min-h-min">
-
-        <div className="text-5xl font-semibold text-gray-800 py-10">
-          User Form
+          <div className="py-5">
+            <button
+              className="bg-orange-500 hover:bg-orange-700 text-white font-semibold px-4 py-1 rounded-2xl shadow-md transform transition-transform duration-100 btn-click-effect"
+              onClick={() => {}}
+            >
+              {" "}
+              Submit
+            </button>
+          </div>
         </div>
-
-        <div>{Object.keys(finalFormList).map((key) => finalFormList[key])}</div>
-
-        <div className="py-5">
-            <button onClick={() => {}}> Submit</button>
-        </div>
-
       </div>
-</div>
     </>
   );
 }
